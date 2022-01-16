@@ -14,7 +14,7 @@ def diagrams(line: str, cell: str):
     drivers = {'flowchart', 'dot', 'sequence', 'railroad'}
     line = line.strip()
     if line not in drivers:
-        return 'use as: %%diagrams <driver name>, drivers supported are {:s}'.format(str(drivers))
+        return 'use as: %%diagrams <driver name>, supported drivers are {:s}'.format(str(drivers))
 
     src = 'graph.txt'
     dest = 'graph.svg'
