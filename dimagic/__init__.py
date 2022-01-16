@@ -25,7 +25,7 @@ def diagrams(line: str, cell: str):
     tokens = ['diagrams', line, src, dest]
     if platform.system().lower() == 'linux' and (line == 'flowchart' or line == 'sequence'):
         try:
-            DISPLAY = check_output(['echo', '${DISPLAY}'], shell=True).decode('utf-8')
+            DISPLAY = check_output(['echo ${DISPLAY}', '-l'], shell=True).decode('utf-8')
         except SubprocessError as e:
             DISPLAY = ''
         
