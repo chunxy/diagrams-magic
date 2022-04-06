@@ -27,7 +27,7 @@ The **dimagic** is an IPython magic that enables calling [`diagrams` ](https://g
 
   `cd dimagic`
 
-  `pip install -e ./`
+  `pip install ./`
 
 ## Usage
 
