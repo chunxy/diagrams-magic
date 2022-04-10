@@ -2,7 +2,7 @@
 from IPython.core.magic import register_cell_magic
 from IPython.core.interactiveshell import InteractiveShell
 from IPython.display import display, SVG
-from os import  popen
+from os import  popen, name
 from subprocess import (DEVNULL, check_output, call, SubprocessError)
 import platform
 from shutil import which
@@ -21,8 +21,11 @@ def diagrams(line: str, cell: str):
 
     with open(src, 'w') as desc:
         desc.write(cell)
+    if name == 'nt':
+        tokens = ['diagrams.cmd', line, src, dest]
+    else:
+        tokens = ['diagrams', line, src, dest]
 
-    tokens = ['diagrams', line, src, dest]
     if platform.system().lower() == 'linux' and (line == 'flowchart' or line == 'sequence'):
         try:
             DISPLAY = check_output(['echo ${DISPLAY}', '-l'], shell=True).decode('utf-8')
