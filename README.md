@@ -5,7 +5,7 @@ The **dimagic** is an IPython magic that enables calling [`diagrams` ](https://g
 ## Requirements
 - `diagrams`
 
-  The mechanism of this magic is to call `diagrams` installed on local machine. So please ensure that `diagrams` is accessible on your system or in your virtual environment
+  The mechanism of this magic is to call `diagrams` installed on local machine. So please ensure that `diagrams` is accessible on your system or in your virtual environment.
 
   If you have `node` and `npm` installed, you may install `diagrams` with
 
@@ -17,17 +17,17 @@ The **dimagic** is an IPython magic that enables calling [`diagrams` ](https://g
   
   However if you are to deploy this magic on a headless **Linux** backend, `diagrams flowchart` and `diagrams sequence` will report 'Cannot open display' error. 
 
-  This can be circumvented with a virtual display. We suggest installing `xvfb` so that our magic will automatically detect packaged `xvfb-run` and use it. The solution is detailed at [Electron's webpage](https://www.electronjs.org/docs/latest/tutorial/testing-on-headless-ci/#configuring-the-virtual-display-server)
+  This can be circumvented with a virtual display. We suggest installing `xvfb` so that our magic will automatically detect packaged `xvfb-run` and use it. The solution is detailed at [Electron's webpage](https://www.electronjs.org/docs/latest/tutorial/testing-on-headless-ci/#configuring-the-virtual-display-server).
 
 ## Installation
 
 - From source code
   
-  `git clone https://github.com/ccha23/dimagic.git`
-
-  `cd dimagic`
-
-  `pip install -e ./`
+  ```shell
+  git clone https://github.com/ccha23/dimagic.git
+  cd dimagic
+  pip install ./
+  ```
 
 ## Usage
 
