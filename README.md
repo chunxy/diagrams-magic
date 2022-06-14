@@ -33,7 +33,9 @@ The **dimagic** is an IPython magic that enables calling [`diagrams` ](https://g
 
 As with usual IPython magic, remember to `%load_ext dimagic` before using this magic.
 
-This is a cell magic. In the first line of your cell, type `%%diagrams [flowchart|dot|sequence|railroad]` to indicate which driver you are to use. In the rest of this cell, simply type the graph descriptions.
+This is a cell magic. In the first line of your cell, type `%%diagrams (flowchart|dot|sequence|railroad) [name]` to indicate which driver you are to use and the name of image file. If no `name` is provided, no image file will be generated (but the image will still be available in the output cell). In the rest of this cell, simply type the graph descriptions.
+
+See the [demo file](./demo/diagrams.ipynb) for reference.
 
 ## Known Issue(s)
 

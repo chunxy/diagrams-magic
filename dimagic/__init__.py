@@ -11,21 +11,23 @@ def diagrams(line: str, cell: str):
         return 'error: diagrams command not installed'
 
     drivers = {'flowchart', 'dot', 'sequence', 'railroad'}
-    line = line.strip()
-    if line not in drivers:
+    tokens = line.strip().split(maxsplit=1)
+    driver = tokens[0]
+    if driver not in drivers:
         return 'use as: %%diagrams <driver name>, supported drivers are {:s}'.format(str(drivers))
 
+    named = tokens[1] if len(tokens) == 2 else False
     now = str(date.today())
     src = now + '-src.txt'
-    dest = now + '-dest.svg'
+    dest = (tokens[1] + '.svg') if named else now + '-dest.svg'
 
     with open(src, 'w') as desc:
         desc.write(cell)
 
-    tokens = ['diagrams', line, src, dest]
+    args = ['diagrams', driver, src, dest]
     if platform.system().lower() == 'windows':
-        tokens[0] = 'diagrams.cmd'
-    if platform.system().lower() == 'linux' and (line == 'flowchart' or line == 'sequence'):
+        args[0] = 'diagrams.cmd'
+    if platform.system().lower() == 'linux' and (driver == 'flowchart' or driver == 'sequence'):
         try:
             DISPLAY = check_output(['echo ${DISPLAY}', '-l'], shell=True).decode('utf-8')
         except SubprocessError as e:
@@ -35,16 +37,17 @@ def diagrams(line: str, cell: str):
             if which('xvfb-run') is None:
                 return 'cannot find (virtual) display, contact the server host for this'
             else:    
-                tokens.insert(0, 'xvfb-run')
+                args.insert(0, 'xvfb-run')
 
     # cmd = ' '.join(tokens)
     # system(cmd)
-    call(tokens)
+    call(args)
     
     with open(dest, 'rb') as pic:
         raw = pic.read()
     remove(src)
-    remove(dest)
+    if not named:
+        remove(dest)
     
     return display(SVG(raw))
 
