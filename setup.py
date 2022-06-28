@@ -9,22 +9,22 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="dimagic",
+    name="diagrams-magic",
     version="0.0.1",
     description="Jupyter notebook magic cell wrapper for diagrams.",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/ccha23/dimagic",
-    author="DIVE",
+    url="https://github.com/chunxy/diagrams-magic.git",
+    author="chunxy",
     license="MIT",
     classifiers=[
         "Framework :: IPython",
         "Programming Language :: Python",
         "License :: OSI Approved :: MIT License",
     ],    
-    packages=["dimagic"],
+    packages=["diagrams-magic"],
     include_package_data=True,
     install_requires=[
-        "notebook",
+        "ipython>=7.0"
     ],
 )

@@ -1,6 +1,6 @@
-# dimagic
+# diagrams-magic
 
-The **dimagic** is an IPython magic that enables calling [`diagrams` ](https://github.com/seflless/diagrams) within IPython kernel to draw graphs with pure texts. The most common use case, however, would be to use this magic within Jupyter Notebook, which integrates the IPython kernel within it.
+The **diagrams-magic** is an IPython magic that enables calling [`diagrams` ](https://github.com/seflless/diagrams) within IPython kernel to draw graphs with pure texts. The most common use case, however, would be to use this magic within Jupyter Notebook, which integrates the IPython kernel within it.
 
 ## Requirements
 - `diagrams`
@@ -24,16 +24,16 @@ The **dimagic** is an IPython magic that enables calling [`diagrams` ](https://g
 - From source code
   
   ```shell
-  git clone https://github.com/ccha23/dimagic.git
-  cd dimagic
+  git clone https://github.com/chunxy/diagrams-magic.git
+  cd diagrams-magic
   pip install ./
   ```
 
 ## Usage
 
-As with usual IPython magic, remember to `%load_ext dimagic` before using this magic.
+As with usual IPython magic, remember to `%load_ext diagrams-magic` before using this magic.
 
-This is a cell magic. In the first line of your cell, type `%%diagrams (flowchart|dot|sequence|railroad) [name]` to indicate which driver you are to use and the name of image file. If no `name` is provided, no image file will be generated (but the image will still be available in the output cell). In the rest of this cell, simply type the graph descriptions.
+This is a cell magic. In the first line of your cell, type `%%diagrams (flowchart|dot|sequence|railroad) [name]` to indicate which driver you are to use and the name of image file. If no `name` is provided, no image file will be generated in your current directory (but the image will still be available in the output cell). In the rest of this cell, simply type in the graph descriptions.
 
 See the [demo file](./demo/diagrams.ipynb) for reference.
 
