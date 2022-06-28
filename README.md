@@ -17,16 +17,22 @@ The **diagrams-magic** is an IPython magic that enables calling [`diagrams` ](ht
   
   However if you are to deploy this magic on a headless **Linux** backend, `diagrams flowchart` and `diagrams sequence` will report 'Cannot open display' error. 
 
-  This can be circumvented with a virtual display. We suggest installing `xvfb` so that our magic will automatically detect packaged `xvfb-run` and use it. The solution is detailed at [Electron's webpage](https://www.electronjs.org/docs/latest/tutorial/testing-on-headless-ci/#configuring-the-virtual-display-server).
+  This can be circumvented with a virtual display. We suggest installing `xvfb` so that our magic will detect the installed `xvfb-run` command and use it. The solution is detailed at [Electron's webpage](https://www.electronjs.org/docs/latest/tutorial/testing-on-headless-ci/#configuring-the-virtual-display-server).
 
 ## Installation
 
-- From source code
+- From PIP:
+  
+  ```shell
+  pip install diagrams-magic
+  ```
+  
+- Development install:
   
   ```shell
   git clone https://github.com/chunxy/diagrams-magic.git
   cd diagrams-magic
-  pip install ./
+  pip install -e ./
   ```
 
 ## Usage

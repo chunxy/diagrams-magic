@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="diagrams-magic",
-    version="0.0.1",
+    version="0.0.2",
     description="Jupyter notebook magic cell wrapper for diagrams.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -25,6 +25,6 @@ setup(
     packages=["diagrams-magic"],
     include_package_data=True,
     install_requires=[
-        "ipython>=7.0"
+        "ipython~=7.0"
     ],
 )
